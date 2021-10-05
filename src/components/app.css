@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Poppins:wght@200;300;400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-font: "Gemunu Libre", sans-serif;
+    --secondary-font: "Poppins", sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: var(--secondary-font);
+}
+.updateModel.active {
+    display: block;
+}
+.updateModel {
+    display: none;
+}
+
+.display {
+    width: 75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 63% 34%;
+    gap: 2rem;
+    padding: 1rem;
+}
+.leftDisplay,
+.rightDisplay {
+    padding: 1rem 0.5rem;
+}
+/* display balance */
+
+.displayBalance .totalBalance {
+    display: flex;
+    align-items: center;
+}
+.displayBalance .totalBalance h2 {
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+.displayBalance .totalBalance p {
+    padding: 0.3rem 3rem;
+    background-color: rgba(165, 42, 42, 0.4);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 2.8rem;
+    font-family: var(--primary-font);
+    box-shadow: 2px 2px 10px rgba(165, 42, 42, 0.311);
+}
+.displayBalance .totalBalance p span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+.displayBalance .calBalance {
+    display: flex;
+    margin-top: 1rem;
+}
+.displayBalance .calBalance div {
+    margin-right: 1rem;
+    padding: 0.4rem 1rem;
+    background-color: rgba(247, 94, 94, 0.681);
+    box-shadow: 2px 2px 10px rgba(247, 94, 94, 0.381);
+    backdrop-filter: blur(5px);
+    color: #333;
+}
+.displayBalance .calBalance div.expensesBalance {
+    background-color: rgba(94, 247, 107, 0.681);
+    box-shadow: 2px 2px 10px rgba(94, 247, 107, 0.381);
+    color: #333;
+}
+.displayBalance .calBalance div h4 {
+    font-size: 1.5rem;
+}
+.displayBalance .calBalance div p {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    text-align: right;
+    font-family: var(--primary-font);
+}
+.displayBalance .calBalance div p span {
+    font-size: 0.7rem;
+    margin-left: 0.2rem;
+}
+
+/* display balance */
+
+/* main form */
+.leftDisplay h3 {
+    margin: 3rem 0 1rem;
+}
+.mainForm input[type="number"],
+.mainForm input[type="text"] {
+    width: 350px;
+    padding: 0.6rem 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+input[type="date"] {
+    display: block;
+    margin-top: 0.8rem;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    border: 1px solid rgb(130, 176, 228);
+    outline: none;
+    background-color: rgb(130, 176, 228);
+    color: #333;
+    font-size: 0.9rem;
+    font-family: var(--primary-font);
+    letter-spacing: 1px;
+}
+::-webkit-calendar-picker-indicator {
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mainForm form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+.mainForm form > div input {
+    margin-right: 0.5rem;
+}
+.mainForm button {
+    padding: 0.3rem 0rem;
+    width: 200px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid rgb(79, 175, 151);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(79, 175, 151);
+    font-family: var(--secondary-font);
+}
+.mainForm button:hover {
+    box-shadow: 4px 4px 10px rgba(79, 175, 151, 0.5);
+}
+/* main form */
+
+/* right */
+.rightDisplay {
+    position: relative;
+}
+.rightDisplay h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+.rightDisplay .historyPart .list {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.rightDisplay .historyPart .list h4 {
+    font-size: 1.4rem;
+    color: #333;
+}
+.rightDisplay .historyPart .list p {
+    font-size: 1rem;
+    margin-top: -0.1rem;
+}
+.rightDisplay .historyPart .list .date {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    font-family: var(--primary-font);
+}
+.rightDisplay .historyPart .list .income {
+    color: green;
+}
+.rightDisplay .historyPart .list .expance {
+    color: red;
+}
+.rightDisplay .historyPart .list .updateBtn {
+    display: flex;
+}
+.rightDisplay .historyPart .list .updateBtn i {
+    margin-right: 0.8rem;
+}
+.rightDisplay .historyPart .list .updateBtn .income,
+.rightDisplay .historyPart .list .updateBtn .expance {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    height: 100%;
+    width: 5px;
+    background-color: green;
+}
+.rightDisplay .historyPart .list .updateBtn .expance {
+    background-color: red;
+}
+.rightDisplay .updateModel {
+    padding: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.rightDisplay .updateModel form .enterInput {
+    display: flex;
+    margin-bottom: 0.2rem;
+}
+.rightDisplay .updateModel form .enterInput input {
+    padding: 0.3rem 0.5rem;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    font-family: var(--secondary-font);
+}
+.rightDisplay .updateModel form .radioInput {
+    display: flex;
+    margin-top: 0.5rem;
+}
+.rightDisplay .updateModel form .radioInput div {
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+.rightDisplay .updateModel form .radioInput div input {
+    margin-right: 6px;
+}
+.rightDisplay .updateModel form input[type="date"] {
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+.rightDisplay .updateModel form button,
+.cancelBtn {
+    padding: 0.3rem 0rem;
+    width: 100px;
+    margin-top: 0.5rem;
+    font-size: 0.8 rem;
+    outline: none;
+    border: 1px solid rgb(79, 175, 151);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(79, 175, 151);
+    font-family: var(--secondary-font);
+}
+.rightDisplay .updateModel form button:hover {
+    box-shadow: 4px 4px 10px rgba(79, 175, 151, 0.5);
+}
+.cancelBtn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid gray;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+/* right */
+
+@media only screen and (max-width: 1073px) {
+    .display {
+        grid-template-columns: 100%;
+    }
+}
+@media only screen and (max-width: 693px) {
+    .displayBalance {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .displayBalance .totalBalance h2 {
+        font-size: 1.2rem;
+    }
+    .displayBalance .totalBalance p {
+        font-size: 1.8rem;
+        padding: 0.5rem 2rem;
+    }
+}
