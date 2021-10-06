@@ -1,23 +1,22 @@
 import React from "react";
-import BalanceHistory from "./BalanceHistory";
-import DisplayBalance from "./DisplayBalance";
-import { BalanceProvider } from "./ExpenceContext";
-import Form from "./Form";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Home";
 import "./app.css";
+import SignUp from "./Authentication/SignUp";
 
 const App = () => {
-  return (
-    <BalanceProvider>
-      <div className="display">
-        <div className="leftDisplay">
-          <DisplayBalance />
-          <h3>Add Expenses or Income</h3>
-          <Form />
-        </div>
-        <BalanceHistory />
-      </div>
-    </BalanceProvider>
-  );
+    return (
+        <>
+            <Router>
+                <Route path="/signup" exact>
+                    <SignUp />
+                </Route>
+                <Route path="/" exact>
+                    <Home />
+                </Route>
+            </Router>
+        </>
+    );
 };
 
 export default App;
