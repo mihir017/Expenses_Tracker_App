@@ -4,9 +4,9 @@ import { updateUserData } from "../Hook/LocalStorage";
 const BalanceContext = createContext();
 
 export const BalanceProvider = ({ children }) => {
-    const log = JSON.parse(localStorage.getItem("expensesTrackerLoginUser"));
+    // const log = JSON.parse(localStorage.getItem("expensesTrackerLoginUser"));
 
-    const [currentUser, setCurrentUser] = useState({});
+    // const [currentUser, setCurrentUser] = useState({});
 
     const [balance, setBalance] = useState({
         totalBalance: 0,
@@ -14,6 +14,7 @@ export const BalanceProvider = ({ children }) => {
         expenses: 0,
         history: [],
     });
+    console.log(balance);
     // useEffect(() => {
     //     setCurrentUser(log);
     //     setBalance(log.balanceData);

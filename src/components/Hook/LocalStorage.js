@@ -48,9 +48,9 @@ export const userSignIn = ({ email, password }) => {
             "expensesTrackerLoginUser",
             JSON.stringify(findUser)
         );
-        return "success";
+        return { user: findUser, msg: "success" };
     } else {
-        return "error";
+        return { msg: "error" };
     }
 };
 

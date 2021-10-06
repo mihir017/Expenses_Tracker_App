@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Home";
 import "./app.css";
 import SignUp from "./Authentication/SignUp";
-import Singin from "./Authentication/SingIn";
-import PrivateRoute from "./Authentication/PrivateRoute";
+import Singin from "./Authentication/Singin";
+import { BalanceProvider } from "./context/ExpenceContext";
+// import PrivateRoute from "./Authentication/PrivateRoute";
 
 const App = () => {
     return (
-        <>
+        <BalanceProvider>
             <Router>
                 <Route path="/signup" exact>
                     <SignUp />
@@ -23,7 +24,7 @@ const App = () => {
                     <Home />
                 </PrivateRoute> */}
             </Router>
-        </>
+        </BalanceProvider>
     );
 };
 

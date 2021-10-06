@@ -4,6 +4,7 @@ import InputField from "../InputField";
 import "./authentication.css";
 import { userSignIn } from "../Hook/LocalStorage";
 import { Link } from "react-router-dom";
+import { useBalance } from "../context/ExpenceContext";
 
 const SignIn = () => {
     const [signInDetail, setSignInDetail] = useState({
@@ -11,20 +12,22 @@ const SignIn = () => {
         password: "",
     });
     const history = useHistory();
-    const [msg, setMsg] = useState("");
+    const { setBalance } = useBalance();
+    const [msg, setMsg] = useState({ user: {}, msg: "" });
 
     useEffect(() => {
-        if (msg === "success" && msg) {
+        if (msg.msg === "success" && msg.msg) {
             setTimeout(() => {
-                setMsg("");
+                setBalance(msg.user?.balanceData);
+                setMsg({ user: {}, msg: "" });
                 history.push("/");
             }, 1500);
         } else {
             setTimeout(() => {
-                setMsg("");
+                setMsg({ user: {}, msg: "" });
             }, 1500);
         }
-    }, [msg, history]);
+    }, [msg, history, setBalance]);
 
     const onHandleChange = (e) => {
         const { name, value } = e.target;
@@ -36,7 +39,7 @@ const SignIn = () => {
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
-        setMsg(userSignIn(signInDetail));
+        setMsg({ ...userSignIn(signInDetail) });
         // setTimeout(() => {
         //     history.push("/");
         // }, 2000);
@@ -48,8 +51,8 @@ const SignIn = () => {
 
     return (
         <div className="container">
-            <p className={`msg ${msg}`}>
-                {msg === "success"
+            <p className={`msg ${msg.msg}`}>
+                {msg.msg === "success"
                     ? "SuccessFully Sign In 👍"
                     : "Email or Password is Wrong 👎"}
             </p>
