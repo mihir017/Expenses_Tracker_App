@@ -14,12 +14,22 @@ const BalanceHistory = () => {
 
     const setUpdatedBalance = (changeBal) => {
         let total = 0;
+        let income = 0;
+        let expenses = 0;
         const newBalance = balance.history.map((bal) => {
             if (bal.id === changeBal.id) {
                 total +=
                     changeBal.balanceType === "income"
                         ? balance.totalBalance + (changeBal.value - bal.value)
                         : balance.totalBalance + (bal.value - changeBal.value);
+                income +=
+                    changeBal.balanceType === "income"
+                        ? balance.income + (changeBal.value - bal.value)
+                        : balance.income;
+                expenses +=
+                    changeBal.balanceType === "expance"
+                        ? balance.expenses + (changeBal.value - bal.value)
+                        : balance.expenses;
                 return changeBal;
             } else {
                 return bal;
@@ -27,6 +37,8 @@ const BalanceHistory = () => {
         });
         setBalance({
             totalBalance: total,
+            income,
+            expenses,
             history: [...newBalance],
         });
         setIsOpen(!isOpen);
