@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useBalance } from "./ExpenceContext";
+import { useBalance } from "./context/ExpenceContext";
 import InputForm from "./InputForm";
 
 const BalanceHistory = () => {

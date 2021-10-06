@@ -1,7 +1,7 @@
 import React from "react";
 import BalanceHistory from "./BalanceHistory";
 import DisplayBalance from "./DisplayBalance";
-import { BalanceProvider } from "./ExpenceContext";
+import { BalanceProvider } from "./context/ExpenceContext";
 import Form from "./Form";
 import "./app.css";
 

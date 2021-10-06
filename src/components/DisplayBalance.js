@@ -1,5 +1,5 @@
 import React from "react";
-import { useBalance } from "./ExpenceContext";
+import { useBalance } from "./context/ExpenceContext";
 
 const DisplayBalance = () => {
     const { balance } = useBalance();

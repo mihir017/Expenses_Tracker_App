@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useBalance } from "./ExpenceContext";
+import { useBalance } from "./context/ExpenceContext";
 import InputForm from "./InputForm";
 
 const Form = () => {
